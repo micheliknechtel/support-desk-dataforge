@@ -10,6 +10,7 @@ conventions — none of it is declared in the manifest.
 support_metric_store/
   common/                      # runners and shared config (not a domain)
   service_delivery/            # domain
+    Incident/                  # entity, same Code/ and Schema/ layout
     Ticket/                    # entity
       Code/                    # pipelines, one file per cadence
       Schema/                  # table DDL, one file per grain and cadence
@@ -22,10 +23,12 @@ support_metric_store/
 | | |
 | --- | --- |
 | Domains | 1 (`service_delivery`) |
-| Entities built | 1 of 3 (`Ticket`; `incident` and `release` are unbuilt) |
+| Entities built | 2 of 3 (`Incident`, `Ticket`; `release` is unbuilt) |
+| Metrics | 4 (two lifecycle counts per built entity) |
 | Grains | 3 (`account_id`, `workspace_id`, `user_id`) |
 | Cadences | 2 (Daily, Cumulative) |
 | Tables per entity | 6 |
+| Total tables per zone | 12 |
 | Zones | 2 (`zone1`, `zone2`) |
 
 ## Conventions
