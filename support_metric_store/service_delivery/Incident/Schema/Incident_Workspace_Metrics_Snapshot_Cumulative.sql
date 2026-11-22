@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS {TARGET_CATALOG}.Incident_Workspace_Metrics_Snapshot_Cumulative (
+    SNAPSHOT_DATE DATE NOT NULL
+    , account_id BIGINT NOT NULL
+    , workspace_id BIGINT NOT NULL
+    , metric_name VARCHAR(128) NOT NULL
+    , metric_value BIGINT NOT NULL
+    , LOAD_TIMESTAMP TIMESTAMP NOT NULL
+    , SOURCE_ZONE VARCHAR(16) NOT NULL
+);

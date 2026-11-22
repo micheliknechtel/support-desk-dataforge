@@ -34,10 +34,13 @@ than a duplicated command.
 | --- | --- | --- |
 | Accounts | 40 | 15 |
 | Source tables | `tickets`, `incidents`, `releases` | same |
-| Built entities | `Ticket` only | `Ticket` only |
+| Seeded entities | `Ticket` only | `Ticket` only |
 
-`Incident` is what the demo builds. `Release` is left unbuilt so the store
-still has somewhere to go after the demo ends.
+`Incident` pipelines and schemas are available in
+[`support_metric_store/service_delivery/Incident/`](support_metric_store/service_delivery/Incident/README.md).
+The build for #1 deploys and backfills them in both zones. Re-running `seed.py`
+rebuilds the warehouse with only Ticket targets, so deploy Incident again
+after reseeding. `Release` remains unbuilt.
 
 Every source table carries `account_id`, `workspace_id`, and `user_id`, so all
 three grains are viable for every entity — which means the grain decision in
